@@ -24,4 +24,12 @@ const login = async (user) => {
   return foundUser;
 };
 
-module.exports = { register, login };
+const update = async (id, user) => {
+  return User.findByIdAndUpdate(id, user, { new: true }).select("-password");
+};
+
+const getUser = async (id) => {
+  return User.findById(id).select("-password");
+};
+
+module.exports = { register, login, update, getUser };

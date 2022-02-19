@@ -11,6 +11,10 @@ const userSchema = mongoose.Schema({
     trim: true,
   },
   password: {},
+  weight: {},
+  height: {},
+  age: {},
+  bp: {},
 });
 
 module.exports.User = mongoose.model("User", userSchema);
